@@ -11,6 +11,10 @@ class PiFaceDigital {
 			INPUT_PULLUP = PiFaceCommon::GPPUB,
 			MAX_BOARDS = 4;
 	
+	// /dev/spidev<bus>.<chipselect>
+	const
+			SPI_BUS = 0,
+			SPI_CHIP_SELECT = 0;
 	
 	
 	private $handler;
@@ -65,6 +69,12 @@ class PiFaceDigital {
 		return $this->switches;
 	}
 	
+	static public function create () {
+		$spi = new \Spi(self::SPI_BUS, self::SPI_CHIP_SELECT);
+		$common = new PiFaceCommon($spi);
+		return new PiFaceDigital($common);
+	}
+	
 	/**
 	 * Creates a new device.
 	 * @param PiFaceCommon $handler A PiFaceCommon instance.
@@ -78,23 +88,23 @@ class PiFaceDigital {
 		// Ranges are +1 for pins.
 		
 		foreach (range(0, 7) as $pinNum) {
-			$this->inputPins[] = new Component\InputItem($this->handler, ($pinNum+1), $this->boardNum);
+			$this->inputPins[] = new Component\InputItem($this->handler, ($pinNum), $this->boardNum);
 		}
 		
 		foreach (range(0, 7) as $pinNum) {
-			$this->outputPins[] = new Component\OutputItem($this->handler, ($pinNum+1), $this->boardNum);
+			$this->outputPins[] = new Component\OutputItem($this->handler, ($pinNum), $this->boardNum);
 		}
 		
 		foreach (range(0, 7) as $pinNum) {
-			$this->leds[] = new Component\LED($this->handler, ($pinNum+1), $this->boardNum);
+			$this->leds[] = new Component\LED($this->handler, ($pinNum), $this->boardNum);
 		}
 		
 		foreach (range(0, 1) as $pinNum) {
-			$this->relays[] = new Component\Relay($this->handler, ($pinNum+1), $this->boardNum);
+			$this->relays[] = new Component\Relay($this->handler, ($pinNum), $this->boardNum);
 		}
 		
 		foreach (range(0, 3) as $pinNum) {
-			$this->switches[] = new Component\SwitchItem($this->handler, ($pinNum+1), $this->boardNum);
+			$this->switches[] = new Component\SwitchItem($this->handler, ($pinNum), $this->boardNum);
 		}
 		
 		
@@ -152,4 +162,3 @@ class PiFaceDigital {
 }
 
 
-new PiFaceDigital(new PiFaceCommon(new \Spi(0,1)));

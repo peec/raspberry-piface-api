@@ -7,7 +7,12 @@ require __DIR__ . '/vendor/autoload.php';
 
 
 // Init anew PiFaceDigital object. Note that Spi extension must be compiled and added!
-$dev = new PiFaceDigital(new PiFaceCommon(new \Spi(0,0)));
+
+if (!class_exists('\Spi')) {
+	die ("Spi extension must be installed (https://github.com/frak/php_spi)"); 
+}
+
+$dev = PiFaceDigital::create();
 
 // Run once.
 $dev->init();

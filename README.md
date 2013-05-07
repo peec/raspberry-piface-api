@@ -18,15 +18,20 @@ Install with composer.
 ```php
 use Pkj\Raspberry\PiFace\PiFaceDigital;
 
-use Pkj\Raspberry\PiFace\PiFaceCommon;
-
-$dev = new PiFaceDigital(new PiFaceCommon(new \Spi(0,1)));
-
+$dev = PiFaceDigital::create();
+// Run once.
 $dev->init();
 
 $dev->getLeds()[0]->turnOn();
 sleep(2);
 $dev->getLeds()[0]->turnOff();
+
+
+// $dev->getInputPins();
+// $dev->getOutputPins();
+// $dev->getLeds();
+// $dev->getRelays();
+// $dev->getSwitches();
 
 
 

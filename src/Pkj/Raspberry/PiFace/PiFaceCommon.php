@@ -60,13 +60,16 @@ class PiFaceCommon {
 	
 	SPIDEV = '/dev/spidev';
 	
+	
+	
+	
 	/**
 	 * Spi Driver
 	 * @var \Spi
 	 */
 	private $spi;
 	
-	public function __construct(\Spi $spi) {
+	public function __construct($spi) {
 		$this->spi = $spi;
 	}
 	
