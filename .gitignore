@@ -2,3 +2,4 @@
 .project
 .settings/
 examples/vendor/*
+composer.lock
