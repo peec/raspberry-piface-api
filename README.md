@@ -22,6 +22,8 @@ use Pkj\Raspberry\PiFace\PiFaceCommon;
 
 $dev = new PiFaceDigital(new PiFaceCommon(new \Spi(0,1)));
 
+$dev->init();
+
 $dev->getLeds()[0]->turnOn();
 sleep(2);
 $dev->getLeds()[0]->turnOff();
