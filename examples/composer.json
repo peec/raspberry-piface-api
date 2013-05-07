@@ -1,0 +1,5 @@
+{
+	"require": {
+		"pkj/raspberry-piface-api": "dev-master"
+	}
+}

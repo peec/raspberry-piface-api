@@ -1,0 +1,21 @@
+{
+    "name": "pkj/raspberry-piface-api",
+    "type": "library",
+    "description": "Lets you control your PiFace for Raspberry PI with PHP.",
+    "homepage": "http://github.com/peec/raspberry-piface-api",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Petter Kjelkenes",
+            "email": "kjelkenes@gmail.com",
+            "homepage": "http://pkj.no",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-0": {"Pkj\\Raspberry\\PiFace": "src/"}
+    },
+    "require": {
+        "php": ">=5.4.0"
+    }
+}
