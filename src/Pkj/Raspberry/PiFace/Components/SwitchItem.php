@@ -1,6 +1,9 @@
 <?php
 namespace Pkj\Raspberry\PiFace\Components;
 
+use Pkj\Raspberry\PiFace\PiFaceCommon;
+use Pkj\Raspberry\PiFace\PiFaceDigital;
+use Pkj\Raspberry\PiFace\RangeError;
 
 class SwitchItem extends InputItem {
 	public function __construct(PiFaceCommon $handler, $switchNum, $boardNum = 0) {

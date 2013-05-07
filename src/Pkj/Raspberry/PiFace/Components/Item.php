@@ -1,6 +1,10 @@
 <?php
 namespace Pkj\Raspberry\PiFace\Components;
 
+use Pkj\Raspberry\PiFace\PiFaceCommon;
+use Pkj\Raspberry\PiFace\PiFaceDigital;
+use Pkj\Raspberry\PiFace\RangeError;
+
 
 abstract class Item {
 	protected $handler;
