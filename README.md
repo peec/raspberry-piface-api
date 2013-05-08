@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/peec/raspberry-piface-api.png?branch=master)](https://travis-ci.org/peec/raspberry-piface-api)
+
 # Raspberry PI - PiFace API for PHP 5.4+
 
 	Warning, not tested, i don't own the PiFace just yet, i am waiting for my PiFace to arrive :)
