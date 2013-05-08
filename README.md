@@ -63,6 +63,7 @@ Create a PHP script named `test_piface.php` (We assume that you place `test_pifa
 ```php
 use Pkj\Raspberry\PiFace\PiFaceDigital;
 
+dl("spi.so"); // Load the SPI extension.
 require 'vendor/autoload.php';
 
 $dev = PiFaceDigital::create();
