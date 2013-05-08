@@ -3,3 +3,4 @@
 .settings/
 examples/vendor/
 examples/composer.lock
+vendor/

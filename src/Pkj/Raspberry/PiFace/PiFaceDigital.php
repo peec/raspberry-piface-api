@@ -1,6 +1,8 @@
 <?php
 namespace Pkj\Raspberry\PiFace;
 
+use Pkj\Raspberry\PiFace\SpiManager\SpiExtension;
+
 use Pkj\Raspberry\PiFace\Components as Component;
 
 
@@ -69,8 +71,12 @@ class PiFaceDigital {
 		return $this->switches;
 	}
 	
+	public function getHandler () {
+		return $this->handler;
+	}
+	
 	static public function create () {
-		$spi = new \Spi(self::SPI_BUS, self::SPI_CHIP_SELECT);
+		$spi = new SpiExtension(self::SPI_BUS, self::SPI_CHIP_SELECT);
 		$common = new PiFaceCommon($spi);
 		return new PiFaceDigital($common);
 	}

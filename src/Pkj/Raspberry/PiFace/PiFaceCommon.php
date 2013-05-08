@@ -10,6 +10,8 @@ namespace Pkj\Raspberry\PiFace;
  *
  */
 
+use Pkj\Raspberry\PiFace\SpiManager\SpiInterface;
+
 class PiFaceCommon {
 	
 	/**
@@ -65,13 +67,23 @@ class PiFaceCommon {
 	
 	/**
 	 * Spi Driver
-	 * @var \Spi
+	 * @var Pkj\Raspberry\PiFace\SpiManager\SpiInterface
 	 */
 	private $spi;
 	
-	public function __construct($spi) {
+	public function __construct(SpiInterface $spi) {
 		$this->spi = $spi;
 	}
+	
+	
+	/**
+	 * Gets the SPI manager.
+	 * @return Pkj\Raspberry\PiFace\SpiManger\SpiInterface
+	 */
+	public function getSpi () {
+		return $this->spi;
+	}
+	
 	
 	/**
 	 * Translates a pin num to pin bit mask. First pin is pin0.
@@ -135,7 +147,7 @@ class PiFaceCommon {
 	 * @param unknown_type $boardNum
 	 * @param unknown_type $readWriteCmd
 	 */
-	private function _getDeviceOpcode ($boardNum, $readWriteCmd) {
+	public function _getDeviceOpcode ($boardNum, $readWriteCmd) {
 		$boardAddrPattern = ($boardNum << 1) & 0xE; //  0b0010, 3 -> 0b0110
 		$rwCmdPattern = $readWriteCmd & 1; // make sure it's just 1 bit long
 		
