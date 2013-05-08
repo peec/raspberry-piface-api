@@ -18,6 +18,24 @@ I ported the [original Python library](https://github.com/piface/pifacedigitalio
 - Apache if you want to run commands from web scripts.
 
 
+## Setting up the environment
+
+Few things you need to install your environment, here is some instructions.
+
+```bash
+# Install php + git
+sudo apt-get install php5 php5-dev git
+
+# Install php SPI
+git clone git://github.com/frak/php_spi.git ~/php_spi
+cd ~/php_spi
+./configure --enable-spi
+make
+make test
+sudo make install
+
+```
+
 ## Install
 
 Install with Composer:
