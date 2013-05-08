@@ -2,7 +2,6 @@
 use Pkj\Raspberry\PiFace\PiFaceCommon;
 
 use Pkj\Raspberry\PiFace\PiFaceDigital;
-
 require __DIR__ . '/vendor/autoload.php';
 
 

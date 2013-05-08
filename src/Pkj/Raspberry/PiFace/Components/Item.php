@@ -22,4 +22,8 @@ abstract class Item {
 		$this->pinNum = $pinNum;
 
 	}
+	
+	public function __toString () {
+		return "PiFace Component: Board {$this->boardNum}, Pin {$this->pinNum}";
+	}
 }

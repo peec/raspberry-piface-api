@@ -75,6 +75,9 @@ class PiFaceDigital {
 		return $this->handler;
 	}
 	
+	/**
+	 * @return Pkj\Raspberry\PiFace\PiFaceDigital
+	 */
 	static public function create () {
 		$spi = new SpiExtension(self::SPI_BUS, self::SPI_CHIP_SELECT);
 		$common = new PiFaceCommon($spi);
