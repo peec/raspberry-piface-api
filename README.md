@@ -12,10 +12,12 @@ I ported the [original Python library](https://github.com/piface/pifacedigitalio
 
 ## Requirements
 
-- Hardware: Raspberry PI and PiFace module.
+- Hardware: **Raspberry PI** and **PiFace module**.
 - PHP 5.4+ installed
 - You also need to add the php SPI extension, compile it and configure, see: https://github.com/frak/php_spi
 - Apache if you want to run commands from web scripts.
+
+Don't worry, follow the guides below to get started:
 
 
 ## Setting up the environment
