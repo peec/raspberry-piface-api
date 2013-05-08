@@ -2,23 +2,50 @@
 
 # Raspberry PI - PiFace API for PHP 5.4+
 
+I ported the [original Python library](https://github.com/piface/pifacedigitalio) to PHP. This library works almost the same as the python library.
+
+
 	Warning, not tested, i don't own the PiFace just yet, i am waiting for my PiFace to arrive :)
 	Converted from Python to PHP.
 
 
+
 ## Requirements
 
-- You need to add the php SPI extension, compile it and configure, see: https://github.com/frak/php_spi
+- Hardware: Raspberry PI and PiFace module.
+- PHP 5.4+ installed
+- You also need to add the php SPI extension, compile it and configure, see: https://github.com/frak/php_spi
+- Apache if you want to run commands from web scripts.
 
 
 ## Install
 
-Install with composer.
+Install with Composer:
+
+Here is some commands to your new project in `~/myphpiface` (in your home directory):
+
+```bash
+mkdir ~/myphppiface
+touch ~/myphpiface/composer.json
+echo '{ "require": { "pkj/raspberry-piface-api": "dev-master" } }' >> ~/myphpiface/composer.json
+curl -sS https://getcomposer.org/installer | php
+php composer.phar install
+```
+
+This will create a `vendor` directory where the library is installed.
+
+
+
 
 ## Usage:
 
+
+Create a PHP script named `test_piface.php` (We assume that you place `test_piface.php` where `composer.json` file is.) and paste this in the file: 
+
 ```php
 use Pkj\Raspberry\PiFace\PiFaceDigital;
+
+require 'vendor/autoload.php';
 
 $dev = PiFaceDigital::create();
 // Run once.
@@ -52,5 +79,14 @@ $dev->getOutputPins()[5]->toggle(); // 0
 
 
 ```
+
+And test:
+
+```bash
+php -f test_piface.php
+```
+
+
+
 
 
