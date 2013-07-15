@@ -128,7 +128,7 @@ class PiFaceCommon {
 	/**
 	 * Writes the value given to the bit specified
 	 */
-	public function writeBit ($value, $bitNum, $address, $boardNum) {
+	public function writeBit ($value, $bitNum, $address, $boardNum) {
 		$bitMask = $this->getBitMask($bitNum);
 		$oldByte = $this->read($address, $boardNum);
 		
