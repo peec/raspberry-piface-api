@@ -43,5 +43,11 @@ foreach($dev->getLeds() as $led) {
 	sleep(1);
 }
 
+// Test inputs
+
+foreach ($dev->getInputPins() as $inputPin) {
+    echo "Value of $inputPin is {$inputPin->getValue()}\n";
+}
+
 
 
