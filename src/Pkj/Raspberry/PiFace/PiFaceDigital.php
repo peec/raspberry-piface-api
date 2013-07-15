@@ -33,7 +33,7 @@ class PiFaceDigital {
 	
 	/**
 	 * Gets all the input pins.
-	 * @return array Array of InputItem
+	 * @return array|Component\InputItem[] Array of InputItem
 	 */
 	public function getInputPins () {
 		return $this->inputPins;
@@ -49,7 +49,7 @@ class PiFaceDigital {
 	
 	/**
 	 * Gets all the leds.
-	 * @return array Array of LED
+	 * @return array|Component\LED[] Array of LED
 	 */
 	public function getLeds () {
 		return $this->leds;
@@ -57,7 +57,7 @@ class PiFaceDigital {
 	
 	/**
 	 * Gets all the relays.
-	 * @return array Array of Relay
+	 * @return array|Component\Relay[] Array of Relay
 	 */
 	public function getRelays () {
 		return $this->relays;
@@ -76,7 +76,7 @@ class PiFaceDigital {
 	}
 	
 	/**
-	 * @return Pkj\Raspberry\PiFace\PiFaceDigital
+	 * @return \Pkj\Raspberry\PiFace\PiFaceDigital
 	 */
 	static public function create () {
 		$spi = new SpiExtension(self::SPI_BUS, self::SPI_CHIP_SELECT);
