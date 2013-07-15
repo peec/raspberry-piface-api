@@ -23,7 +23,7 @@ $dev->init();
 
 // Test relays
 
-foreach ($this->getRelays() as $relay) {
+foreach ($dev->getRelays() as $relay) {
 	echo "Turning on relay: $relay\n";
 	$relay->turnOn();
 	sleep(1);
@@ -34,12 +34,12 @@ foreach ($this->getRelays() as $relay) {
 
 // Test leds
 
-foreach($this->getLeds() as $led) {
+foreach($dev->getLeds() as $led) {
 	echo "Turning on led: $led\n";
-	$relay->turnOn();
+	$led->turnOn();
 	sleep(1);
 	echo "Turning off led: $led\n";
-	$relay->turnOff();
+	$led->turnOff();
 	sleep(1);
 }
 
