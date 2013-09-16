@@ -32,6 +32,7 @@ sudo apt-get install php5 php5-dev php5-cli git
 # Install php SPI
 git clone git://github.com/frak/php_spi.git ~/php_spi
 cd ~/php_spi
+phpize
 ./configure --enable-spi
 make
 make test
