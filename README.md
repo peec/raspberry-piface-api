@@ -47,7 +47,8 @@ Install with Composer:
 Here is some commands to your new project in `~/myphpiface` (in your home directory):
 
 ```bash
-mkdir ~/myphppiface
+mkdir ~/myphpiface
+cd ~/myphpiface
 touch ~/myphpiface/composer.json
 echo '{ "require": { "pkj/raspberry-piface-api": "dev-master" } }' >> ~/myphpiface/composer.json
 curl -sS https://getcomposer.org/installer | php
